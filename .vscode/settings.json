@@ -1,4 +1,6 @@
 {
-    "python.formatting.provider": "yapf",
-    "editor.formatOnSave": true
+	"[python]": {
+        "python.formatting.provider": "yapf",
+		"editor.formatOnSave": true,
+	}
 }
