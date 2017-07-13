@@ -143,7 +143,7 @@ def main(args):
     pq.poll()
     while not pq.isAllDone():
         try:
-            if pq.Popen(args.maxprocess) == 0:
+            if pq.Popen(args.process) == 0:
                 break
         except TimeoutExpired:
             pq.cleanup()
@@ -164,14 +164,14 @@ if __name__ == '__main__':
         '--timeout',
         help='Max time for video downloading, if over this, re-download.',
         default=1440,
-        metavar='seconds',
+        metavar='sec',
         type=int)
     parser.add_argument(
-        '-m',
-        '--maxprocess',
-        help='Max processing number at the same time.',
+        '-p',
+        '--process',
+        help='Max process number at the same time.',
         default=3,
-        metavar='int',
+        metavar='N',
         type=int)
     args = parser.parse_args()
     main(args)
