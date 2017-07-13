@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
+import argparse
 import json
 import sys
 import threading
 from enum import IntEnum
-from subprocess import Popen, TimeoutExpired, DEVNULL
-import argparse
+from subprocess import DEVNULL, Popen, TimeoutExpired
 
 
 # https://stackoverflow.com/questions/5179467/
@@ -113,17 +113,17 @@ class ProcQ():
                     ds.append(p.name)
                     self.finished.append(p)
             elif s is State.DL:
-            	dls.append(p.name)
+                dls.append(p.name)
             else:
                 pass
             sa[s] += 1
 
         if len(ds) > 0:
-        	print('\n')
-        	for d in ds:
-        		print(d, 'is done.')
-        	print('downloading: {}, queuing: {}, done: {}'.format(sa[State.DL], sa[State.WAIT],
-                                                  sa[State.DONE]))
+            print('\n')
+            for d in ds:
+                print(d, 'is done.')
+            print('downloading: {}, queuing: {}, done: {}'.format(
+                sa[State.DL], sa[State.WAIT], sa[State.DONE]))
         print(', '.join(dls), 'is downloading...', end='\r')
 
     def isAllDone(self):
@@ -152,23 +152,24 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         'json',
-        help='The json file that you copy from m3u8 extractor userscript. e.g. m3u8.json')
+        help=
+        'The json file that you copy from m3u8 extractor userscript. e.g. m3u8.json'
+    )
     parser.add_argument(
         '-t',
         '--timeout',
-        help=
-        'Max time for video downloading, if over this, re-download.',
+        help='Max time for video downloading, if over this, re-download.',
         default=1440,
         metavar='seconds',
         type=int)
     parser.add_argument(
         '-m',
         '--maxprocess',
-        help=
-        'Max processing number at the same time.',
+        help='Max processing number at the same time.',
         default=3,
         metavar='int',
         type=int)
