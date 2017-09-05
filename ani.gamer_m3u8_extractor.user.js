@@ -6,8 +6,7 @@
 // @author      FlandreDaisuki
 // @include     https://ani.gamer.com.tw/animeVideo.php?sn=*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-// @require
-// https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.min.js
+// @require     https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.min.js
 // @require     https://i2.bahamut.com.tw/js/anime.js
 // @version     0.1
 // @grant       none
