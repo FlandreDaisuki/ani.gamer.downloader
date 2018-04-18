@@ -4,9 +4,9 @@
 // @namespace   https://github.com/FlandreDaisuki
 // @author      FlandreDaisuki
 // @match       *://ani.gamer.com.tw/animeVideo.php?sn=*
-// @require     https://cdn.rawgit.com/eligrey/FileSaver.js/master/FileSaver.min.js
-// @require     https://i2.bahamut.com.tw/js/anime.js
-// @version     1.0
+// @require     https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js
+// @require     https://cdn.rawgit.com/FlandreDaisuki/ani.gamer.downloader/master/anime.patched.js
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
